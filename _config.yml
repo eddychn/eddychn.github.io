@@ -1,0 +1,17 @@
+title: Aditya Chauhan
+description: >-
+  Writing on product, technology, and the conversations behind them.
+url: "https://adityasphere.in"
+baseurl: ""
+permalink: /blog/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+plugins:
+  - jekyll-feed
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
