@@ -1,4 +1,4 @@
-# adityasphere.in
+# adityasphere.com
 
 Personal blog of Aditya Chauhan. Built with Jekyll, served via GitHub Pages.
 
