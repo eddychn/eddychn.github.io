@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
 <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -18,7 +19,7 @@
 <body>
 <header class="site-header-bar">
   <div class="site-shell">
-    <a class="nav-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="nav-brand" href="{{ '/' | relative_url }}"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15.5" fill="none" stroke="var(--color-accent-700)" stroke-width="3"/><circle cx="35" cy="20" r="4" fill="var(--color-accent-700)"/></svg>{{ site.title }}</a>
     <nav class="nav-links">
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
       <a href="https://www.linkedin.com/in/aditya32001/" target="_blank" rel="noopener noreferrer" aria-label="About Aditya Chauhan — opens LinkedIn profile in a new tab">About<span class="ext-icon" aria-hidden="true"> ↗</span></a>

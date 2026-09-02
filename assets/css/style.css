@@ -6,7 +6,8 @@
 .site-footer-bar { border-top: 1px solid var(--color-divider); }
 .site-footer-bar .site-shell { padding-top: 28px; padding-bottom: 56px; font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
 
-.nav-brand { color: var(--color-text); text-decoration: none; }
+.nav-brand { color: var(--color-text); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+.brand-mark { width: 22px; height: 22px; flex-shrink: 0; }
 .nav-links { display: flex; gap: 28px; font-size: 14px; }
 .nav-links a { text-decoration: none; color: var(--color-text); display: inline-flex; align-items: center; padding: 6px 0; }
 .nav-links a:hover, .nav-links a[aria-current='page'] { color: var(--color-accent-700); }
