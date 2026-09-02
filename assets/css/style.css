@@ -1,40 +1,29 @@
 @import url('modernist.css');
 
-/* Dark mode — extends the Modernist tokens with a dark ground; same accent hue/chroma. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #1c1b1a;
-    --color-surface: #272524;
-    --color-text: #f3f2f2;
-    --color-divider: color-mix(in srgb, #f3f2f2 30%, transparent);
-  }
-}
-
 .site-shell { max-width: 720px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 .site-header-bar { border-bottom: 2px solid var(--color-divider); }
-.site-header-bar .site-shell { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; padding-bottom: 20px; }
-.site-footer-bar { border-top: 2px solid var(--color-divider); }
-.site-footer-bar .site-shell { padding-top: 20px; padding-bottom: 48px; font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
-.site-footer-bar a { color: color-mix(in srgb, var(--color-text) 55%, transparent); text-decoration: underline; }
-.site-footer-bar a:hover { color: var(--color-text); }
+.site-header-bar .site-shell { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 28px; padding-bottom: 28px; }
+.site-footer-bar { border-top: 1px solid var(--color-divider); }
+.site-footer-bar .site-shell { padding-top: 28px; padding-bottom: 56px; font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
 
 .nav-brand { color: var(--color-text); text-decoration: none; }
-.nav-links { display: flex; gap: 24px; font-size: 14px; }
-.nav-links a { text-decoration: none; color: var(--color-text); }
+.nav-links { display: flex; gap: 28px; font-size: 14px; }
+.nav-links a { text-decoration: none; color: var(--color-text); display: inline-flex; align-items: center; padding: 6px 0; }
 .nav-links a:hover, .nav-links a[aria-current='page'] { color: var(--color-accent-700); }
+.ext-icon { font-size: 11px; margin-left: 2px; opacity: 0.6; }
 
 .post-content a, .page-content a, .intro a { color: var(--color-accent-700); }
 
-main.site-shell { padding-top: 40px; padding-bottom: 80px; min-height: 40vh; }
-.intro { color: color-mix(in srgb, var(--color-text) 60%, transparent); margin: 0 0 32px; font-size: 16px; }
+main.site-shell { padding-top: 64px; padding-bottom: 96px; min-height: 40vh; }
+.intro { color: color-mix(in srgb, var(--color-text) 60%, transparent); margin: 0 0 40px; font-size: 16px; line-height: 1.6; }
 
-.post-list { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--color-divider); }
-.post-list li { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--color-divider); align-items: baseline; }
+.post-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--color-divider); }
+.post-list li { display: flex; gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--color-divider); align-items: baseline; }
 .post-date { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); min-width: 90px; flex-shrink: 0; }
 .post-link { font-size: 17px; font-weight: 600; text-decoration: none; color: var(--color-text); }
 .post-link:hover { color: var(--color-accent-700); }
 
-.post-title, .page-title { font-size: 32px; margin: 0 0 12px; }
-.post-meta { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0 0 32px; }
-.post-content, .page-content { font-size: 17px; }
-.post-content p, .page-content p { margin: 0 0 20px; }
+.post-title, .page-title { font-size: 32px; margin: 0 0 16px; }
+.post-meta { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0 0 40px; }
+.post-content, .page-content { font-size: 17px; line-height: 1.65; }
+.post-content p, .page-content p { margin: 0 0 24px; }

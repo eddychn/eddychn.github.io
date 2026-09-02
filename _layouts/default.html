@@ -21,14 +21,14 @@
     <a class="nav-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav class="nav-links">
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
-      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+      <a href="https://www.linkedin.com/in/aditya32001/" target="_blank" rel="noopener noreferrer" aria-label="About Aditya Chauhan — opens LinkedIn profile in a new tab">About<span class="ext-icon" aria-hidden="true"> ↗</span></a>
     </nav>
   </div>
 </header>
 <main class="site-shell">{{ content }}</main>
 <footer class="site-footer-bar">
   <div class="site-shell">
-    &copy; {{ site.time | date: '%Y' }} {{ site.title }} &middot; <a href="mailto:adtchauhan123@gmail.com">Email</a> &middot; <a href="https://github.com/eddychn">GitHub</a> &middot; <a href="https://www.linkedin.com/in/aditya32001/">LinkedIn</a>
+    &copy; {{ site.time | date: '%Y' }} {{ site.title }}
   </div>
 </footer>
 </body>
