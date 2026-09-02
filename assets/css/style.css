@@ -28,3 +28,140 @@ main.site-shell { padding-top: 64px; padding-bottom: 96px; min-height: 40vh; }
 .post-meta { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0 0 40px; }
 .post-content, .page-content { font-size: 17px; line-height: 1.65; }
 .post-content p, .page-content p { margin: 0 0 24px; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Case-study article components. Additive: every class is namespaced and
+   unused by existing posts, so nothing already published changes. Built from
+   the modernist.css tokens only — no new colours, no new fonts, no radii.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* — subtitle under the post title — */
+.post-standfirst {
+  font-size: 19px; line-height: 1.5; margin: -8px 0 32px;
+  color: color-mix(in srgb, var(--color-text) 65%, transparent);
+}
+
+/* — tag row — */
+.post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 40px; }
+
+/* — table of contents — */
+.post-toc {
+  border-top: 2px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+  padding: 20px 0; margin: 0 0 48px;
+}
+.post-toc h2 {
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  margin: 0 0 14px;
+}
+.post-toc ol {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 28px; counter-reset: toc;
+}
+.post-toc li { counter-increment: toc; font-size: 14px; line-height: 1.4; }
+.post-toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  margin-right: 10px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 45%, transparent);
+}
+.post-toc a { color: var(--color-text); text-decoration: none; }
+.post-toc a:hover { color: var(--color-accent-700); text-decoration: underline; }
+
+/* — callout / pull quote — */
+.callout {
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-accent-100);
+  padding: 20px 24px; margin: 0 0 24px;
+}
+.callout p { margin: 0; font-size: 17px; line-height: 1.5; }
+.callout p + p { margin-top: 12px; }
+
+/* — provenance legend + inline status chips — */
+.legend { display: grid; gap: 10px; margin: 0 0 24px; }
+.legend-row { display: flex; gap: 12px; align-items: baseline; font-size: 15px; }
+.chip {
+  flex: none; min-width: 92px; font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 3px 8px; text-align: center;
+}
+.chip-verified { background: var(--color-neutral-200); color: var(--color-neutral-900); }
+.chip-synthetic { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.chip-assumed  { background: var(--color-accent-100); color: var(--color-accent-800); }
+.chip-gap      { border: 1px solid var(--color-accent); color: var(--color-accent-700); }
+
+/* — architecture flow diagram (semantic <ol>, drawn with CSS) — */
+.arch { margin: 0 0 32px; }
+.arch ol { list-style: none; padding: 0; margin: 0; counter-reset: arch; }
+.arch li {
+  position: relative; counter-increment: arch;
+  padding: 16px 0 16px 56px;
+  border-top: 1px solid var(--color-divider);
+}
+.arch li:last-child { border-bottom: 1px solid var(--color-divider); }
+.arch li::before {
+  content: counter(arch);
+  position: absolute; left: 0; top: 16px;
+  width: 32px; height: 32px; display: grid; place-items: center;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 13px;
+  background: var(--color-surface); color: var(--color-text);
+  border: 1px solid var(--color-divider);
+}
+/* connector between steps */
+.arch li:not(:last-child)::after {
+  content: ""; position: absolute; left: 15.5px; top: 48px; bottom: -1px;
+  width: 1px; background: var(--color-divider);
+}
+.arch .arch-t {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 16px; line-height: 1.25; margin: 0 0 4px;
+}
+.arch .arch-d {
+  font-size: 14px; line-height: 1.5; margin: 0;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+/* — limitations block: visually distinct, deliberately plain — */
+.limits {
+  border: 2px solid var(--color-divider);
+  padding: 24px; margin: 0 0 24px;
+}
+.limits h3 { font-size: 17px; margin: 0 0 4px; }
+.limits > p { font-size: 14px; margin: 0 0 20px; color: color-mix(in srgb, var(--color-text) 65%, transparent); }
+.limits dl { margin: 0; display: grid; gap: 16px; }
+.limits dt {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; margin-bottom: 3px;
+}
+.limits dd { margin: 0; font-size: 14px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 75%, transparent); }
+
+/* — checklist — */
+.checklist { list-style: none; padding: 0; margin: 0 0 24px; }
+.checklist li {
+  position: relative; padding: 10px 0 10px 30px;
+  border-bottom: 1px solid var(--color-divider); font-size: 15px; line-height: 1.5;
+}
+.checklist li::before {
+  content: ""; position: absolute; left: 0; top: 15px;
+  width: 13px; height: 13px; border: 1.5px solid var(--color-accent);
+}
+
+/* — results table gets a horizontal scroll rail on small screens — */
+.table-scroll { overflow-x: auto; margin: 0 0 24px; -webkit-overflow-scrolling: touch; }
+.table-scroll .table { min-width: 460px; }
+.table td.num, .table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* — mobile — */
+@media (max-width: 640px) {
+  .post-standfirst { font-size: 17px; }
+  .post-toc ol { grid-template-columns: 1fr; }
+  .callout { padding: 16px 18px; }
+  .callout p { font-size: 16px; }
+  .limits { padding: 18px; }
+  .arch li { padding-left: 46px; }
+  .arch li::before { width: 26px; height: 26px; font-size: 12px; }
+  .arch li:not(:last-child)::after { left: 12.5px; top: 42px; }
+  .legend-row { flex-direction: column; gap: 4px; }
+  .chip { align-self: flex-start; }
+}
