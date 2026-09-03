@@ -24,7 +24,8 @@ main.site-shell { padding-top: 64px; padding-bottom: 96px; min-height: 40vh; }
 .post-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--color-divider); }
 .post-list li { padding: 24px 0; border-bottom: 1px solid var(--color-divider); }
 .post-list-main { display: flex; gap: 28px; align-items: baseline; }
-.post-date { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); min-width: 90px; flex-shrink: 0; }
+.post-date, .post-reading-time { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); flex-shrink: 0; }
+.post-date { min-width: 90px; }
 .post-link { font-size: 17px; font-weight: 600; text-decoration: none; color: var(--color-text); }
 .post-link:hover { color: var(--color-accent-700); }
 .post-list-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; padding: 0 0 0 118px; }

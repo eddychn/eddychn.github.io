@@ -5,9 +5,12 @@ layout: default
   <p class="intro">I'm Aditya Chauhan. I work on product and UI for early-stage companies, and I write here about how AI actually gets built and operationalized — drawn from real conversations, and from things I build myself to test my own assumptions.</p>
   <ul class="post-list">
     {% for post in site.posts %}
+    {% assign words = post.content | strip_html | number_of_words %}
+    {% assign reading_time = words | divided_by: 200.0 | ceil %}
     <li>
       <div class="post-list-main">
         <span class="post-date">{{ post.date | date: "%b %Y" }}</span>
+        <span class="post-reading-time">{{ reading_time }} min read</span>
         <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </div>
       {% if post.tags and post.tags.size > 0 %}
