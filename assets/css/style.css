@@ -5,6 +5,8 @@
 .site-header-bar .site-shell { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 28px; padding-bottom: 28px; }
 .site-footer-bar { border-top: 1px solid var(--color-divider); }
 .site-footer-bar .site-shell { padding-top: 28px; padding-bottom: 56px; font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+.site-footer-bar a { color: color-mix(in srgb, var(--color-text) 55%, transparent); text-decoration: underline; text-underline-offset: 2px; }
+.site-footer-bar a:hover { color: var(--color-accent-700); }
 
 .nav-brand { color: var(--color-text); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
 .brand-mark { width: 22px; height: 22px; flex-shrink: 0; }
@@ -14,15 +16,28 @@
 .ext-icon { font-size: 11px; margin-left: 2px; opacity: 0.6; }
 
 .post-content a, .page-content a, .intro a { color: var(--color-accent-700); }
+.post-content a:hover, .page-content a:hover, .intro a:hover { text-decoration-thickness: 2px; }
 
 main.site-shell { padding-top: 64px; padding-bottom: 96px; min-height: 40vh; }
 .intro { color: color-mix(in srgb, var(--color-text) 60%, transparent); margin: 0 0 40px; font-size: 16px; line-height: 1.6; }
 
 .post-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--color-divider); }
-.post-list li { display: flex; gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--color-divider); align-items: baseline; }
+.post-list li { padding: 24px 0; border-bottom: 1px solid var(--color-divider); }
+.post-list-main { display: flex; gap: 28px; align-items: baseline; }
 .post-date { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); min-width: 90px; flex-shrink: 0; }
 .post-link { font-size: 17px; font-weight: 600; text-decoration: none; color: var(--color-text); }
 .post-link:hover { color: var(--color-accent-700); }
+.post-list-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; padding: 0 0 0 118px; }
+
+/* — smooth, fast, deliberately subtle — */
+.nav-links a, .post-link, .site-footer-bar a, .post-content a, .page-content a, .intro a, .post-toc a {
+  transition: color 0.15s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a, .post-link, .site-footer-bar a, .post-content a, .page-content a, .intro a, .post-toc a {
+    transition: none;
+  }
+}
 
 .post-title, .page-title { font-size: 32px; margin: 0 0 16px; }
 .post-meta { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0 0 40px; }
@@ -164,4 +179,5 @@ main.site-shell { padding-top: 64px; padding-bottom: 96px; min-height: 40vh; }
   .arch li:not(:last-child)::after { left: 12.5px; top: 42px; }
   .legend-row { flex-direction: column; gap: 4px; }
   .chip { align-self: flex-start; }
+  .post-list-tags { padding-left: 0; }
 }
